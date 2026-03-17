@@ -1,0 +1,6 @@
+ollama
+streamlit
+pandas
+fastapi
+uvicorn
+python-multipart
