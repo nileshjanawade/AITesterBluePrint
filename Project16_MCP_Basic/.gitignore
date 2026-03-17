@@ -1,0 +1,4 @@
+node_modules/
+*.log
+screenshot_error_*.png
+.DS_Store
