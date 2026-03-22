@@ -1,0 +1,16 @@
+TC ID,Category,Test Scenario,Pre-requisites,Test Steps,Expected Result,Priority
+TC_01,Functional,Happy Path: Successful Appointment Booking,User logged in; slots available,"1. Open App. 2. Navigate to Booking. 3. Select a valid future slot. 4. Click 'Book Now'. 5. Confirm booking.",Appointment booked successfully; confirmation message displayed.,High
+TC_02,Functional,Edge Case: Booking for a past date,User logged in,"1. Navigate to Booking. 2. Attempt to select a date in the past.",Date is disabled or error message shown.,High
+TC_03,Functional,Edge Case: Booking for a slot already taken,User logged in,"1. Navigate to Booking. 2. Select a slot. 3. Wait for another session to book the same slot. 4. Click 'Book Now'.",Error: 'Slot already taken; please choose another'.,High
+TC_04,Functional,Edge Case: Concurrent booking attempt,Two users logged in,"1. Both users select same slot. 2. Both click 'Book Now' simultaneously.",Only one succeeds; second receives conflict error.,Medium
+TC_05,Functional,Edge Case: Empty Profile,New user with no health history,"1. Attempt to book appointment.",Prompted to complete profile before booking.,Medium
+TC_06,UI/UX,UI Verification: Theme Consistency,App opened,"1. Verify blue/white color palette. 2. Verify 'Book Now' button visibility. 3. Check glassmorphism effects.",UI matches design specs exactly.,Low
+TC_07,UI/UX,Responsive Design check,Different devices,"1. Open booking screen on different screen sizes.",Layout remains clean and card-based on all screens.,Low
+TC_08,Performance,Load Test: Rapid Clicks,User on booking screen,"1. Click 'Book Now' button 5 times rapidly.",System handles only first request; no multiple bookings.,Medium
+TC_09,Reliability,Network Disruption during booking,Unstable internet,"1. Click 'Book Now'. 2. Disconnect network before confirmation.",App handles timeout gracefully and offers retry.,High
+TC_10,Security,Secure Data Submission,Encryption enabled,"1. Submit booking request. 2. Inspect network traffic.",Patient data is encrypted (HTTPS/TLS) during transit.,Critical
+TC_11,Functional,Edge Case: Maximum advance booking,User logged in,"1. Attempt to book a slot 1 year in advance.",System allows booking within clinic-set limit (e.g. 3 months).,Low
+TC_12,Functional,Edge Case: Correct Timezone display,User in different timezone,"1. Change device timezone. 2. Open booking screen.",Slots display correctly according to local/clinic time.,Medium
+TC_13,Functional,Happy Path: Cancel pending booking,Active booking exists,"1. Navigate to 'My Appointments'. 2. Click 'Cancel Booking'.",Booking removed; slot returned to availability.,High
+TC_14,UI/UX,Verification: Navigation ease,User on Home,"1. Attempt to reach booking screen in <3 clicks.",Booking reachable from Home via clear navigation bar.,Medium
+TC_15,Functional,Edge Case: Special characters in comments (if applicable),User on booking screen,"1. Add comments with emojis/symbols. 2. Click 'Book Now'.",Booking persists correctly with special characters.,Low
